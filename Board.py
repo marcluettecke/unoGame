@@ -48,12 +48,13 @@ class Board:
         self.middle_cards.insert(0, self.remaining_cards.pop(0))
 
     def print_board(self, player1_hand: List[str], player2_hand: List[str], player1_name: str, player2_name: str):
-        print(f"{len(self.remaining_cards)} remaining cards in deck: {self.remaining_cards} \n"
+        print(f""
+              # f"{len(self.remaining_cards)} remaining cards in deck: {self.remaining_cards} \n"
               f"Current middle card: {self.middle_cards[0]} \n"
-              f"Already played cards: {self.middle_cards[1:]} \n"
-              f"{player1_name}'s hand: {player1_hand} \n"
-              f"{player2_name}'s hand: {player2_hand} \n"
-              f"Total cards in game "
+              # f"Already played cards: {self.middle_cards[1:]} \n"
+              # f"{player1_name}'s hand: {player1_hand} \n"
+              # f"{player2_name}'s hand: {player2_hand} \n"
+              # f"Total cards in game "
               f"{len(self.remaining_cards) + len(self.middle_cards) + len(player1_hand) + len(player2_hand)}")
 
     def refill_remaining_cards(self):
@@ -61,4 +62,7 @@ class Board:
         # print(self.remaining_cards)
         random.shuffle(self.remaining_cards)
         self.middle_cards = [self.middle_cards[0]]
+
+# if __name__ == '__main__':
+
 

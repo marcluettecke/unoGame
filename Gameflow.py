@@ -27,8 +27,28 @@ def set_up():
 
 
     global player1, player2, board
-    player1 = ComputerPlayer(name="Steve")
-    player2 = ComputerPlayer(name="Sue", skill_level='medium')
+
+    playmode = input('Do you want to simulate two Computer players (enter "Computer") or play yourself (enter "Human")?')
+    computer_skill2 = 'medium'
+    if playmode == 'Human':
+        player_Name = input("What's your username?")
+        player1 = HumanPlayer(name=player_Name)
+    elif playmode == 'Computer':
+        computer_skill1 = input("How good do you want Player1 to be? So far 'easy' and 'medium' are available ")
+        if computer_skill1 in ['easy', 'medium']:
+            player1 = ComputerPlayer(name="John", skill_level=computer_skill1)
+        else:
+            print('Nota valid skill option, computer skill level set to easy by default')
+            player1 = ComputerPlayer(name="John", skill_level='easy')
+    else:
+        print("This is a not a valid option, please enter either 'Human' or 'Computer' as player type for player1")
+
+    computer_skill2 = input("How good do you want Player2 to be? So far 'easy' and 'medium' are available " )
+    if computer_skill2 in ['easy', 'medium']:
+        player2 = ComputerPlayer(name="Sue", skill_level=computer_skill2)
+    else:
+        print('Nota valid skill option, computer skill level set to easy by default')
+    player2 = ComputerPlayer(name="Sue", skill_level='easy')
     board = Board()
     start_hand1, start_hand2 = board.game_start()
 
@@ -72,8 +92,8 @@ def main_stage(game_ongoing: bool = True):
         print(f"{player1.name}'s hand: {player1.hand}")
         print(f"Remaining cards of the opponent: {len(player2.hand)}")
 
-        # board.print_board(player1_hand=player1.hand, player2_hand=player2.hand, player1_name=player1.name,
-        #                   player2_name=player2.name)
+        board.print_board(player1_hand=player1.hand, player2_hand=player2.hand, player1_name=player1.name,
+                          player2_name=player2.name)
 
 
 def end_game():
@@ -106,7 +126,8 @@ def play_games(number_of_games):
         player1 and player2 ComputerPlayer Objects, which carry the property .total_points as a benchmark of who won
         overall
     """
-    global_player1 = ComputerPlayer(name="Marc")
+    # global_player1 = ComputerPlayer(name="Marc")
+    global_player1 = HumanPlayer(name="Marc")
     global_player2 = ComputerPlayer(name="Sue", skill_level='medium')
     for _ in range(number_of_games):
         set_up()
