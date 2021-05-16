@@ -1,4 +1,4 @@
-# Python Uno Game
+# Python Card Game
 This small project introduces some non-AI Uno game in Python as a practice project for OOP in Python and some simple game logic. No frontend is implemented. The card game is called MauMau in Germany you can find the full description [here](https://en.wikipedia.org/wiki/Mau-Mau_(card_game)). It mainly aims as a practice project for OOP in Python and some pretty simple AI.
 
 ## Basic usage
