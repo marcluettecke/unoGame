@@ -38,6 +38,7 @@ def set_up():
                       player2_name=player2.name)
 
 
+
 def main_stage(game_ongoing: bool = True):
     """
     Main function to let the two computer players actively play. This includes drawing cards, playing cards,

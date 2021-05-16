@@ -1,6 +1,6 @@
 from Gameflow import play_games
 
-player1, player2 = play_games(number_of_games=500)
+player1, player2 = play_games(number_of_games=50)
 
 print(player1.total_points)
 print(player1.total_wins)
